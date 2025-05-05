@@ -1,0 +1,23 @@
+.custom-navbar {
+	background-color: #343a40;
+	padding: 0.7rem 1.5rem; /* reduced padding */
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+	font-size: 1.6rem; /* slightly smaller */
+	font-weight: 600;
+	color: #ffffff !important;
+	margin-left: 0; /* ensure no extra margin */
+}
+
+.nav-link {
+	font-size: 1.1rem;
+	margin-left: 1rem;
+	color: #f8f9fa !important;
+	transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+	color: #ffc107 !important;
+}
