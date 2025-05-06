@@ -11,10 +11,10 @@ const Home = () => {
         className="home-bg"
       />
       <div className="home-overlay">
-        <h1>Welcome to Employee Management System</h1>
-        <p className="lead">Manage employee data efficiently and effectively.</p>
+        <h1>Welcome to Student Management System</h1>
+        <p className="lead">Manage students data efficiently and effectively.</p>
         <Link to="/view-students" className="btn btn-warning btn-lg mt-3 shadow">
-          View All Employees
+          View All students
         </Link>
       </div>
     </div>

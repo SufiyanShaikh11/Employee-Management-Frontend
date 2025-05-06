@@ -35,7 +35,7 @@ const AddStudent = () => {
   return (
     <div className="container mt-4">
       <div className="card shadow-lg p-4 mx-auto" style={{ maxWidth: "700px" }}>
-        <h2 className="text-center mb-4 text-primary">Add New Employee</h2>
+        <h2 className="text-center mb-4 text-primary">Add New Student</h2>
 
         <form onSubmit={saveStudent}>
           <div className="mb-3">

@@ -7,18 +7,18 @@ const NavBar = () => {
 		<nav className="navbar navbar-expand-lg navbar-dark custom-navbar">
 			<div className="container">
 				<Link className="navbar-brand me-auto" to="/">
-					Employee Management System
+					Student Management System
 				</Link>
 				<div className="d-flex">
 					<ul className="navbar-nav ms-auto">
 						<li className="nav-item">
 							<Link className="nav-link" to="/view-students">
-								View All Employees
+								View All Student
 							</Link>
 						</li>
 						<li className="nav-item">
 							<Link className="nav-link" to="/add-students">
-								Add New Employee
+								Add New Student
 							</Link>
 						</li>
 					</ul>

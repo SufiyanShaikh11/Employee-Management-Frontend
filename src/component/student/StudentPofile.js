@@ -30,7 +30,7 @@ const StudentProfile = () => {
         <div className="card shadow-lg border-0 mx-auto" style={{ maxWidth: "700px" }}>
           <div className="card-header bg-dark text-white text-center">
             <FaUserTie size={30} className="mb-2" />
-            <h3>Employee Profile</h3>
+            <h3>Student Profile</h3>
           </div>
           <div className="card-body p-4">
             <div className="mb-3 d-flex align-items-center">
