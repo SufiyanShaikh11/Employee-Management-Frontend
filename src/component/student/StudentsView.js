@@ -3,6 +3,7 @@ import axios from "axios";
 import { FaEdit, FaEye, FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Search from "../common/Search";
+import BASE_URL from "../../config";  // Adjust the path based on your file location
 
 const StudentsView = () => {
   const [students, setStudents] = useState([]);
@@ -15,7 +16,7 @@ const StudentsView = () => {
 
   const loadStudents = async () => {
     try {
-      const result = await axios.get("http://localhost:8080/students");
+      const result = await axios.get(`${BASE_URL}/students`);
       if (result.status === 200) {
         setStudents(result.data);
       }
@@ -26,7 +27,7 @@ const StudentsView = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/students/delete/${id}`);
+      await axios.delete(`${BASE_URL}/students/delete/${id}`);
       loadStudents();
     } catch (err) {
       setError("Failed to delete student. Please try again later.");
