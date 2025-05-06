@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import BASE_URL from "../../config"; // Adjust the path if necessary
 
 const EditStudent = () => {
   let navigate = useNavigate();
@@ -21,8 +22,12 @@ const EditStudent = () => {
   }, []);
 
   const loadStudent = async () => {
-    const result = await axios.get(`http://localhost:8080/students/student/${id}`);
-    setStudent(result.data);
+    try {
+      const result = await axios.get(`${BASE_URL}/students/student/${id}`);
+      setStudent(result.data);
+    } catch (err) {
+      console.error("Error loading student:", err);
+    }
   };
 
   const handleInputChange = (e) => {
@@ -34,11 +39,15 @@ const EditStudent = () => {
 
   const updateStudent = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:8080/students/update/${id}`, {
-      ...student,
-      id: id, // ✅ Add ID to request body
-    });
-    navigate("/view-students");
+    try {
+      await axios.put(`${BASE_URL}/students/update/${id}`, {
+        ...student,
+        id: id, // ✅ Add ID to request body
+      });
+      navigate("/view-students");
+    } catch (err) {
+      console.error("Error updating student:", err);
+    }
   };
 
   return (

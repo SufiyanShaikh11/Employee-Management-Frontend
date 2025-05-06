@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { FaSave, FaTimes } from "react-icons/fa";
+import BASE_URL from "../../config"; // Adjust the path if necessary
 
 const AddStudent = () => {
   const navigate = useNavigate();
@@ -23,8 +24,12 @@ const AddStudent = () => {
 
   const saveStudent = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:8080/students", student);
-    navigate("/view-students");
+    try {
+      await axios.post(`${BASE_URL}/students`, student);
+      navigate("/view-students");
+    } catch (err) {
+      console.error("Error saving student:", err);
+    }
   };
 
   return (

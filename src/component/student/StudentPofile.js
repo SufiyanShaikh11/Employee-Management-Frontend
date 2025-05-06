@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 import { FaUserTie, FaEnvelope, FaBuilding, FaUser, FaArrowLeft } from "react-icons/fa";
+import BASE_URL from "../../config";  // Adjust the path if necessary
 
 const StudentProfile = () => {
   const { id } = useParams();
@@ -14,7 +15,7 @@ const StudentProfile = () => {
 
   const loadStudent = async () => {
     try {
-      const result = await axios.get(`http://localhost:8080/students/student/${id}`);
+      const result = await axios.get(`${BASE_URL}/students/student/${id}`);
       setStudent(result.data);
     } catch (err) {
       setError("Failed to load employee profile. Please try again later.");
